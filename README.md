@@ -69,7 +69,7 @@ Don't forget to give the project a star! Thanks again!
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/tylerjusfly/atlas-hackathon.svg?style=for-the-badge
 [contributors-url]: https://github.com/tylerjusfly/atlas-hackathon/graphs/contributors
 [issues-shield]: https://img.shields.io/github/issues/tylerjusfly/atlas-hackathon.svg?style=for-the-badge
 [issues-url]: https://github.com/tylerjusfly/atlas-hackathon/issues
