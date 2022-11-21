@@ -7,7 +7,7 @@ exports.handleError = (res, error, statusCode) => {
   });
 };
 
-exports.handleBadRequest = (res, message = "bad request", statusCode) => {
+exports.handleBadRequest = (res, message, statusCode) => {
   return res.status(statusCode).json({
     type: "Error",
     message: message || "an error occurred",
