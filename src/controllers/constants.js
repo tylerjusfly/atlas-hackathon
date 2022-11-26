@@ -1,6 +1,7 @@
 //Error handling
 
 exports.handleError = (res, error, statusCode) => {
+  console.log(error);
   return res.status(statusCode).json({
     type: "Error",
     message: error.message || "an error occurred",

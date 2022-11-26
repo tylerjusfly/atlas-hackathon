@@ -7,6 +7,8 @@ const dotenv = require("dotenv");
 const logger = require("morgan");
 
 const allRoutes = require("./routes/main");
+const { preLoadCategories } = require("./utils/utils");
+preLoadCategories();
 
 const app = express();
 app.disable("x-powered-by");
