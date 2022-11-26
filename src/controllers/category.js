@@ -31,3 +31,23 @@ exports.createCategory = async (req, res) => {
     return handleError(res, error, 400);
   }
 };
+
+exports.getCategories = async (req, res) => {
+  try {
+    const result = await Category.find();
+    if (result.length) return successHandler(res, "found", result);
+
+    return handleBadRequest(res, "not found", 400);
+  } catch (error) {
+    handleError(res, error);
+  }
+};
+
+exports.getCategoriesInternal = async () => {
+  try {
+    const result = await Category.find();
+    return result;
+  } catch (error) {
+    handleError(res, error);
+  }
+};
