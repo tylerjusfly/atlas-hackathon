@@ -10,7 +10,9 @@ exports.createCategory = async (req, res) => {
 
     let categorySlug = convertToSlug(name);
 
-    let existing = await Category.findOne({ where: { slug: categorySlug } });
+    let existing = await Category.findOne({ slug: categorySlug });
+
+    console.log(existing, categorySlug);
 
     if (existing) return handleBadRequest(res, "category type already exists", 400);
 
