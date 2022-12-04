@@ -48,5 +48,6 @@ exports.getCategoriesInternal = async () => {
     return result;
   } catch (error) {
     //handleError(res, error);
+    return error;
   }
 };
