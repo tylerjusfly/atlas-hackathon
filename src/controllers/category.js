@@ -1,6 +1,7 @@
 const Category = require("../models/category.model");
 const { handleBadRequest, handleError, successHandler } = require("./constants");
-const { convertToSlug, removeWhiteSpaces } = require("../utils/utils");
+// const { convertToSlug, removeWhiteSpaces } = require("../utils/utils");
+const utils = require("../utils/utils");
 
 exports.createCategory = async (req, res) => {
   let { name } = req.body;
@@ -8,16 +9,14 @@ exports.createCategory = async (req, res) => {
   try {
     if (!name) return handleBadRequest(res, "All fields are Required!", 400);
 
-    let categorySlug = convertToSlug(name);
+    let categorySlug = utils.convertToSlug(name);
 
     let existing = await Category.findOne({ slug: categorySlug });
-
-    console.log(existing, categorySlug);
 
     if (existing) return handleBadRequest(res, "category type already exists", 400);
 
     const result = await Category.create({
-      name: removeWhiteSpaces(name),
+      name: utils.removeWhiteSpaces(name),
       slug: categorySlug,
     });
 
