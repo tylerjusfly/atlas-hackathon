@@ -29,7 +29,7 @@ exports.successHandler = (res, message = undefined, result = null, isCreated = f
       break;
   }
 
-  return res.status(statusCode).json({
+  return res.status(statusCode).send({
     type: "Success",
     message,
     result,
