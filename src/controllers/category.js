@@ -48,6 +48,6 @@ exports.getCategoriesInternal = async () => {
     const result = await Category.find();
     return result;
   } catch (error) {
-    handleError(res, error);
+    //handleError(res, error);
   }
 };
