@@ -1,6 +1,7 @@
 const Product = require("../models/product.model");
 const Category = require("../models/category.model");
 const { handleBadRequest, successHandler, handleError } = require("./constants");
+const { generateFakeProducts } = require("../utils/utils");
 
 exports.createProduct = async (req, res) => {
   const { name, description, price, unit, category } = req.body;
