@@ -56,7 +56,7 @@ exports.findProduct = async (req, res) => {
       let currentCat = await Category.findOne({ _id: categoryId });
       if (!currentCat) return handleBadRequest(res, "category not found", 400);
 
-      let result = await Product.find({ category: categoryId }).limit(limit);
+      let result = await Product.find({ category: categoryId });
       let total = await Product.find({ category: categoryId });
       total = total.length;
 
@@ -67,6 +67,10 @@ exports.findProduct = async (req, res) => {
           totalPages: Math.ceil(total / limit),
           totalItems: total,
         };
+
+        let start = offset * limit;
+        let end = start + limit;
+        result = result.splice(start, end);
         return successHandler(res, "found", result, false, paging);
       }
     }
