@@ -6,4 +6,7 @@ const images = [
   "https://upload.wikimedia.org/wikipedia/commons/0/0f/Serbian_bread.jpg",
   "https://upload.wikimedia.org/wikipedia/commons/a/a1/Cake.jpg",
   "https://upload.wikimedia.org/wikipedia/commons/9/99/Pumpkins.jpg",
+  "https://allnigerianfoods.com/wp-content/uploads/egg-sauce.png",
 ];
+
+module.exports = images;

@@ -1,5 +1,6 @@
 const { faker } = require("@faker-js/faker/locale/en_NG");
 const catController = require("../controllers/category");
+const images = require("./randomImages");
 let categories;
 
 exports.uniqueId = (l) => {
@@ -46,7 +47,7 @@ exports.generateFakeProducts = async (num) => {
         name: faker.commerce.product(),
         description: faker.lorem.paragraph(),
         price: faker.finance.amount(),
-        image: faker.image.fashion(),
+        image: images[Math.floor(Math.random() * images.length)],
         unit: this.generateRandomNumber(1, 100),
         category: await this.randomCategoryId(),
         specifications: [faker.word.adjective(), faker.word.adjective(), faker.word.adjective()],
@@ -59,3 +60,5 @@ exports.generateFakeProducts = async (num) => {
 exports.preLoadCategories = async () => {
   categories = await catController.getCategoriesInternal();
 };
+
+// return items[Math.floor(Math.random()*items.length)];
